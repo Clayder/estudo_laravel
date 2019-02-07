@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get("/nome/{nome}", function($nome){
+    return "<h1> Olá  $nome</h1>";
+});
