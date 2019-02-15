@@ -18,3 +18,10 @@ Route::get('/', function () {
 Route::get("/nome/{nome}", function($nome){
     return "<h1> Olá  $nome</h1>";
 });
+
+/**
+ * Validando os parametros da rota
+ */
+Route::get("rota/{nome}/{n}", function($nome, $n){
+    echo "Entrei";
+})->where("n", "[0-9]")->where("nome", "[A-Za-z]");
