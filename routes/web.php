@@ -26,6 +26,15 @@ Route::get("rota/{nome}/{n}", function($nome, $n){
     echo "Entrei";
 })->where("n", "[0-9]")->where("nome", "[A-Za-z]");
 
-Rote::get("rota/{nome?}", function ($nome = null){
+Route::get("rota/{nome?}", function ($nome = null){
     echo "entrei";
+});
+
+/**
+ * Agrupando rotas
+ */
+Route::prefix('app')->group(function(){
+    Route::get("/", function (){
+        echo "entrei";
+    });
 });
