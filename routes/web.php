@@ -25,3 +25,7 @@ Route::get("/nome/{nome}", function($nome){
 Route::get("rota/{nome}/{n}", function($nome, $n){
     echo "Entrei";
 })->where("n", "[0-9]")->where("nome", "[A-Za-z]");
+
+Rote::get("rota/{nome?}", function ($nome = null){
+    echo "entrei";
+});
